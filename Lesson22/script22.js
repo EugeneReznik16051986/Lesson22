@@ -9,13 +9,13 @@
 3) Вывести массив в консоль*/
 
 let arr = [2, -5, 1, -2, 0, -3, 2, -14];
-let arr2 = arr.map(function(summ){
-  return Math.sqrt( summ );
-});
+let positiveArray = arr.filter(Array);
 function Array(number){
     return number >= 0;
 }
-let positiveArray = arr.filter(Array);
+let arr2 = arr.map(function(summ){
+  return Math.sqrt( summ );
+});
 console.log( positiveArray );
 console.log( arr2 );
 
@@ -41,18 +41,19 @@ array.reduce( function ( a , b ) {
 })
 console.log( summ );
 
-
 // № 3
 /*
 3. Напишите функцию summArguments, которая сложит все аргументы переданные в функцию. Например
 summArguments(10, 1, 2, 5); // 18
 summArguments(10); // 10
 */
-function summArguments(){
-  arguments.reduce = [].reduce;
-  return arguments.reduce(function(a, b) {
-    return a + b;
-  });
+function sumArguments() {
+  let argument = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    argument += arguments[i];
+  }
+  return argument;
 }
-console.log( summArguments(10, 1, 2, 5) );
+console.log( sumArguments(10, 1, 2, 5) );
+
 
